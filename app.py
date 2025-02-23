@@ -31,7 +31,7 @@ else:
     selected_sample = st.selectbox("เลือกรูปตัวอย่าง:", list(sample_images.keys()))
     sample_path = sample_images[selected_sample]
     image = Image.open(sample_path)
-    st.image(image, caption=selected_sample, use_column_width=True)
+    st.image(image, caption=selected_sample, use_container_width=True)
     uploaded_file = sample_path
 
 if uploaded_file:
@@ -51,7 +51,7 @@ if uploaded_file:
     plotted_img = cv2.cvtColor(result.plot(), cv2.COLOR_BGR2RGB)
 
     # แสดงผลลัพธ์
-    st.image(plotted_img, caption="ผลลัพธ์การตรวจจับ", use_column_width=True)
+    st.image(plotted_img, caption="ผลลัพธ์การตรวจจับ", use_container_width=True)
 
     # นับจำนวนวัตถุ
     counts = {model.names[i]: 0 for i in model.names}
